@@ -1,11 +1,14 @@
 :root {
     --section-padding-height: clamp(3.75rem, 8vw, 6.25rem);
-    --section-padding-width: 16px
+    --section-padding-width: 16px;
+    --default-font-size: clamp(1rem, 3vw, 1.5rem);
+    --container-width: 1600px;
+    --container-gap: clamp(3rem, 6vw, 4rem);
 }
 
 html {
     font-family: Roboto, sans-serif;
-    font-size: clamp(1.3rem, 3vw, 2.3rem);
+    font-size: var(--default-font-size);
 }
 
 main section {
@@ -20,14 +23,33 @@ h5,
 h6 {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    font-weight: bolder;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+div.container {
+    width: 100%;
+    margin: auto;
+    max-width: var(--container-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--container-gap);
 }
 
 section#header {
@@ -47,24 +69,12 @@ section#header::before {
     transform: skewY(-22deg);
 }
 
-div.container {
-    width: 100%;
-    margin: auto;
-    max-width: 1600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: clamp(3rem, 6vw, 4rem);
-}
-
-
 .portrait-container {
     position: relative;
 }
 
 .portrait-container h1 {
     color: white;
-    font-weight: 1000;
     text-shadow: 1px 2px 5px black;
 
     position: absolute;
@@ -78,7 +88,6 @@ div.container {
 }
 
 .about-me-container h2 {
-    font-weight: 1000;
     align-self: center;
 }
 
@@ -86,11 +95,86 @@ div.container {
     color: #555555;
 }
 
-.icons {
+.about-me-container .icons {
     align-self: center;
-
 }
 
 .icons svg {
-    width: clamp(1.3rem, 3vw, 2.3rem);
+    width: var(--default-font-size);
+    margin: 0px 5px;
+}
+
+section#projects .grid {
+    --grid-max-col-count: 3;
+    --grid-min-col-size: 300px;
+    --grid-gap: 1rem;
+
+    --grid-col-size-calc: calc((100% - var(--grid-gap) * var(--grid-max-col-count)) / var(--grid-max-col-count));
+    --grid-col-min-size-calc: min(100%,
+            max(var(--grid-min-col-size), var(--grid-col-size-calc)));
+
+    display: grid;
+    gap: var(--grid-gap);
+
+    grid-template-columns: repeat(auto-fit,
+            minmax(var(--grid-col-min-size-calc), 1fr));
+}
+
+section#projects .project-cards {
+    align-self: stretch;
+}
+
+section#projects .project-cards article {
+    box-shadow: 1px 1px 4px 1px grey;
+    height: 31rem;
+}
+
+section#projects .project-cards .screenshot {
+    height: 55%;
+    position: relative;
+}
+
+.project-cards .card_1 {
+    --placeholder-bg: #7c75c8;
+}
+
+.project-cards .card_2 {
+    --placeholder-bg: #d78e3b;
+}
+
+.project-cards .card_3 {
+    --placeholder-bg: #5d8e4e;
+}
+
+.project-cards .card_4 {
+    --placeholder-bg: #c97598;
+}
+
+.project-cards .card_5 {
+    --placeholder-bg: #4792d7;
+}
+
+.project-cards .card_6 {
+    --placeholder-bg: #5d8e4e;
+}
+
+.project-cards article .placeholder {
+    background-color: var(--placeholder-bg);
+}
+
+.screenshot h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.description {
+    padding: 1rem 1.2rem 0;
+}
+
+.description p {
+    color: #555555;
 }
