@@ -5,7 +5,7 @@
 
 html {
     font-family: Roboto, sans-serif;
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: clamp(1.3rem, 3vw, 2.3rem);
 }
 
 main section {
@@ -72,15 +72,25 @@ div.container {
     left: 16px;
 }
 
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .about-me-container h2 {
-    font-weight: bolder;
-    text-align: center;
+    font-weight: 1000;
+    align-self: center;
 }
 
 .about-me-container p {
     color: #555555;
 }
 
+.icons {
+    align-self: center;
+
+}
+
 .icons svg {
-    width: clamp(1rem, 3vw, 2rem);
+    width: clamp(1.3rem, 3vw, 2.3rem);
 }
