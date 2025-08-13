@@ -100,13 +100,13 @@ section#header::before {
 }
 
 .icons svg {
-    width: var(--default-font-size);
+    width: clamp(1.2rem, 3vw, 1.5rem);
     margin: 0px 5px;
 }
 
 section#projects .grid {
     --grid-max-col-count: 3;
-    --grid-min-col-size: 300px;
+    --grid-min-col-size: 330px;
     --grid-gap: 1rem;
 
     --grid-col-size-calc: calc((100% - var(--grid-gap) * var(--grid-max-col-count)) / var(--grid-max-col-count));
@@ -173,8 +173,17 @@ section#projects .project-cards .screenshot {
 
 .description {
     padding: 1rem 1.2rem 0;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.description .icons {
+    justify-self: end;
+    align-self: center;
 }
 
 .description p {
     color: #555555;
+    grid-column: 1 / span 2;
 }
