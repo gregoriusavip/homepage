@@ -191,11 +191,16 @@ section#projects .project-cards .screenshot {
 section#contacts {
     background-color: #0a90b1;
     color: white;
+
+    display: flex;
+    flex-direction: column;
+    padding: 0;
 }
 
 section#contacts .container {
     align-items: stretch;
     gap: 20px;
+    padding: var(--section-padding-height) var(--section-padding-width);
 }
 
 section#contacts .container h2,
@@ -211,4 +216,9 @@ section#contacts div.email {
 
 section#contacts .icons.bottom svg {
     width: 2.2rem;
+}
+
+section#contacts img {
+    width: 100%;
+    height: auto;
 }
