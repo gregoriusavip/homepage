@@ -26,20 +26,20 @@ h6 {
     font-weight: bolder;
 }
 
-h1 {
-    font-size: 2.5rem;
+.medium {
+    font-size: 1.2rem;
 }
 
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
+.big {
     font-size: 1.6rem;
 }
 
-h4 {
-    font-size: 1.2rem;
+.bigger {
+    font-size: 2rem;
+}
+
+.biggest {
+    font-size: 2.5rem;
 }
 
 div.container {
@@ -186,4 +186,29 @@ section#projects .project-cards .screenshot {
 .description p {
     color: #555555;
     grid-column: 1 / span 2;
+}
+
+section#contacts {
+    background-color: #0a90b1;
+    color: white;
+}
+
+section#contacts .container {
+    align-items: stretch;
+    gap: 20px;
+}
+
+section#contacts .container h2,
+section#contacts .icons.bottom {
+    align-self: center;
+}
+
+section#contacts div.phone,
+section#contacts div.email {
+    display: flex;
+    align-items: center;
+}
+
+section#contacts .icons.bottom svg {
+    width: 2.2rem;
 }
