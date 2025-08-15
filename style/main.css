@@ -26,6 +26,10 @@ h6 {
     font-weight: bolder;
 }
 
+p {
+    margin: 0;
+}
+
 .medium {
     font-size: 1.2rem;
 }
@@ -86,6 +90,7 @@ section#header .about-me-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 25px;
 }
 
 section#header .about-me-container p {
@@ -169,6 +174,7 @@ section#projects .project-cards .screenshot {
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    row-gap: 25px;
 }
 
 .description .icons {
@@ -184,20 +190,22 @@ section#projects .project-cards .screenshot {
 section#contacts {
     background-color: #0a90b1;
     color: white;
+}
 
+section#contacts .container img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
+section#contacts .container .info {
     display: flex;
     flex-direction: column;
-    padding: 0;
+    gap: 50px;
 }
 
-section#contacts .container {
-    align-items: stretch;
-    gap: 20px;
-    padding: var(--section-padding-height) var(--section-padding-width);
-}
-
-section#contacts .container h2,
-section#contacts .icons.bottom {
+section#contacts .info h2,
+section#contacts .info .icons.bottom {
     align-self: center;
 }
 
@@ -211,9 +219,15 @@ section#contacts .icons.bottom svg {
     width: 2.2rem;
 }
 
-section#contacts img {
-    width: 100%;
-    height: auto;
+@media screen and (max-width: 979px) {
+    section#contacts {
+        padding: 0;
+    }
+
+    section#contacts .container .info {
+        padding: var(--section-padding-height) var(--section-padding-width);
+    }
+
 }
 
 @media screen and (min-width: 980px) and (max-width: 1279px) {
@@ -246,9 +260,11 @@ section#contacts img {
 
     section#header .about-me-container h2 {
         text-align: center;
+        margin-bottom: 25px;
     }
 
     section#header .about-me-container .icons {
+        margin-top: 25px;
         float: right;
     }
 }
@@ -256,6 +272,22 @@ section#contacts img {
 @media screen and (min-width: 980px) {
     section#header::before {
         height: 100%;
+    }
+
+    section#contacts .container {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    section#contacts .container img {
+        object-fit: cover;
+        width: 400px;
+        height: 600px;
+    }
+
+    section#contacts .info h2,
+    section#contacts .info .icons.bottom {
+        align-self: flex-start;
     }
 }
 
