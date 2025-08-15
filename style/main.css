@@ -1,7 +1,7 @@
 :root {
     --section-padding-height: clamp(3.75rem, 8vw, 6.25rem);
     --section-padding-width: 16px;
-    --default-font-size: clamp(1rem, 3vw, 1.5rem);
+    --default-font-size: clamp(1rem, 3vw, 2rem);
     --container-width: 1600px;
     --container-gap: clamp(3rem, 6vw, 4rem);
 }
@@ -69,11 +69,11 @@ section#header::before {
     transform: skewY(-22deg);
 }
 
-.portrait-container {
+section#header .portrait-container {
     position: relative;
 }
 
-.portrait-container h1 {
+section#header .portrait-container h1 {
     color: white;
     text-shadow: 1px 2px 5px black;
 
@@ -82,31 +82,24 @@ section#header::before {
     left: 16px;
 }
 
-.about-me-container {
+section#header .about-me-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.about-me-container h2 {
-    align-self: center;
-}
-
-.about-me-container p {
+section#header .about-me-container p {
     color: #555555;
 }
 
-.about-me-container .icons {
-    align-self: center;
-}
-
 .icons svg {
-    width: clamp(1.2rem, 3vw, 1.5rem);
+    width: clamp(1.5rem, 3vw, 1.7rem);
     margin: 0px 5px;
 }
 
 section#projects .grid {
     --grid-max-col-count: 3;
-    --grid-min-col-size: 330px;
+    --grid-min-col-size: 450px;
     --grid-gap: 1rem;
 
     --grid-col-size-calc: calc((100% - var(--grid-gap) * var(--grid-max-col-count)) / var(--grid-max-col-count));
@@ -175,7 +168,7 @@ section#projects .project-cards .screenshot {
     padding: 1rem 1.2rem 0;
 
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .description .icons {
@@ -223,27 +216,66 @@ section#contacts img {
     height: auto;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 915px) and (max-width: 1279px) {
+    section#header .container {
+        background-color: white;
+        box-shadow: 1px 1px 4px 1px grey;
+        display: block;
+
+        max-width: calc(100vw - 10rem);
+        padding: 50px;
+    }
+
+    section#header .container::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+
+    section#header .portrait-container {
+        float: left;
+        margin-top: -5rem;
+        margin-left: -5rem;
+
+        transform: scale(85%);
+    }
+
+    section#header .about-me-container {
+        display: block;
+    }
+
+    section#header .about-me-container h2 {
+        text-align: center;
+    }
+
+    section#header .about-me-container .icons {
+        float: right;
+    }
+}
+
+@media screen and (min-width: 915px) {
     section#header::before {
         height: 100%;
     }
+}
 
-    section#header div.container {
+@media screen and (min-width: 1280px) {
+    section#header .container {
         flex-direction: row;
         gap: 0;
     }
 
-    section#header div.about-me-container {
+    section#header .about-me-container {
         background-color: white;
         box-shadow: 1px 1px 4px 1px grey;
-        padding: 50px 25px;
+        padding: 30px 25px;
     }
 
-    .about-me-container h2 {
+    section#header .about-me-container h2 {
         align-self: start;
     }
 
-    .about-me-container .icons {
+    section#header .about-me-container .icons {
         align-self: end;
     }
 }
