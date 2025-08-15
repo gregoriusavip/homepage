@@ -216,7 +216,7 @@ section#contacts img {
     height: auto;
 }
 
-@media screen and (min-width: 915px) and (max-width: 1279px) {
+@media screen and (min-width: 980px) and (max-width: 1279px) {
     section#header .container {
         background-color: white;
         box-shadow: 1px 1px 4px 1px grey;
@@ -253,7 +253,7 @@ section#contacts img {
     }
 }
 
-@media screen and (min-width: 915px) {
+@media screen and (min-width: 980px) {
     section#header::before {
         height: 100%;
     }
